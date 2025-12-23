@@ -17,7 +17,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: 
+        run: |
           python -m pip install --upgrade pip
           pip install pytest-playwright
           
@@ -25,7 +25,7 @@ jobs:
         run: python -m playwright install chromium --with-deps
 
       - name: Run tests
-        run:
+        run: |
           cd cubeit
           python -m http.server:8000 &
           cd ..
